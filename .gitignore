@@ -1,0 +1,28 @@
+# Bytecode do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Diretórios do ambiente virtual
+.venv/
+.env/
+.envrc
+venv/
+pip-wheel-metadata/
+
+# Arquivos do Poetry
+poetry.lock
+
+# Configurações de IDEs e editores de código
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+.DS_Store
+
+# Dados sensíveis e credenciais
+*.env
+secrets.toml
