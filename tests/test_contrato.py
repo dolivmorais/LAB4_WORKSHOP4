@@ -9,7 +9,7 @@ def test_vendas_com_dados_validos():
         "valor": 100.0,
         "produto": "carro",
         "quantidade": 22,
-        "categoria": "categoria1",
+        "categoria": CategoriaEnum.categoria1,  # Agora está correto
     }
 
     vendas = Vendas(**dados_validos)
@@ -19,7 +19,7 @@ def test_vendas_com_dados_validos():
     assert vendas.valor == dados_validos["valor"]
     assert vendas.produto == dados_validos["produto"]
     assert vendas.quantidade == dados_validos["quantidade"]
-    assert vendas.categoria == CategoriaEnum.categoria1  # Correto
+    assert vendas.categoria == CategoriaEnum.categoria1  # Agora a verificação está correta
 
 def test_vendas_com_dados_invalidos():
     dados_invalidos = {
@@ -31,6 +31,6 @@ def test_vendas_com_dados_invalidos():
         "categoria": "catego",  # Categoria inválida
     }
 
-
     with pytest.raises(ValueError):
         Vendas(**dados_invalidos)
+
