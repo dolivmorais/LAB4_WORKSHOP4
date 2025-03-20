@@ -10,8 +10,16 @@ python = "^3.12"
 streamlit = "^1.43.2"
 pydantic = {extras = ["email"], version = "^2.10.6"}
 pytest = "^8.3.5"
+selenium = "^4.29.0"
+taskipy = "^1.14.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+run = "streamlit run src/app.py"
+stop = "for /f \"tokens=5\" %a in ('netstat -ano ^| findstr :8501') do taskkill /PID %a /F"
+test = "pytest tests -v"
+restart = "task stop && task start"
