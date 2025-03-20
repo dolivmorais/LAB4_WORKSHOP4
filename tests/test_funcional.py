@@ -5,6 +5,7 @@ import subprocess
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import os
+
 @pytest.fixture
 def dirver():
     # inicio o streamlit em backgraund
